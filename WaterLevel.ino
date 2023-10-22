@@ -1,4 +1,4 @@
-#include "UltraSonicSensor.h"
+#include "src/ultrasonic-sensor/UltraSonicSensor.h"
 
 byte ultrasonicTriggerPin = 2;
 byte ultrasonicEchoPin = 3;
