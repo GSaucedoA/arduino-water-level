@@ -1,6 +1,0 @@
-{
-    "configuration": "cpu=atmega328",
-    "board": "arduino:avr:nano",
-    "sketch": "WaterLevel.ino",
-    "port": "COM4"
-}
