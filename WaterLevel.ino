@@ -3,8 +3,6 @@
 byte ultrasonicTriggerPin = 2;
 byte ultrasonicEchoPin = 3;
 int serialPort = 9600;
-int pulseDuration = 10;
-int soundSpeed = 59;
 int radarDelayInSeconds = 1;
 int radarFinalDelay = 1000 * radarDelayInSeconds;
 
@@ -14,6 +12,7 @@ void setup()
 {
   Serial.begin(serialPort);
   ultrasonicSensor.init();
+  ultrasonicSensor.enableSerialLog(true);
 }
 
 void loop()

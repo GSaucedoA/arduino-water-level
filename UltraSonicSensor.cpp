@@ -10,8 +10,10 @@ void UltrasonicSensor::init()
   pinMode(echoPin, INPUT);
   digitalWrite(triggerPin, LOW);
 }
-void UltrasonicSensor::triggerOn() {}
-void UltrasonicSensor::triggerOff() {}
+void UltrasonicSensor::enableSerialLog(boolean status) {
+  serialLogEnabled = status;
+}
+
 long UltrasonicSensor::getDistance()
 {
   digitalWrite(triggerPin, HIGH);
@@ -19,13 +21,18 @@ long UltrasonicSensor::getDistance()
   digitalWrite(triggerPin, LOW);
   long time = pulseIn(echoPin, HIGH);
   long distance = calculateDistance(time);
-  Serial.print("Distancia: ");
-  Serial.print(distance);
-  Serial.print("cm");
-  Serial.println();
+  if (serialLogEnabled) printData(distance);
+  
   return distance;
 }
 
 long UltrasonicSensor::calculateDistance(long time){
 return time / 59;
+}
+
+void UltrasonicSensor::printData(long distance){
+  Serial.print("Distancia: ");
+  Serial.print(distance);
+  Serial.print("cm");
+  Serial.println();
 }
