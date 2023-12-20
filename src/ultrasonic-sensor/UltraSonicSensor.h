@@ -11,6 +11,8 @@ private:
   boolean serialLogEnabled = false;
   long calculateDistance(long time);
   void printData(long distance);
+  void startPulse();
+  void stopPulse();
 
 public:
   UltrasonicSensor(byte triggerPin, byte echoPin);
