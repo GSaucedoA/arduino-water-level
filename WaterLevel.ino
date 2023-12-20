@@ -1,4 +1,5 @@
 #include "src/ultrasonic-sensor/UltraSonicSensor.h"
+#include "src/wifi-module/WifiModule.h"
 
 byte ultrasonicTriggerPin = 2;
 byte ultrasonicEchoPin = 3;
